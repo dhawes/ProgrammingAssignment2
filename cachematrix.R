@@ -40,9 +40,11 @@ cacheSolve <- function(x, ...)
     if(!is.null(ix))
     {
         message("getting cached data")
-        return(ix)
     }
-    ix <- solve(x$get())
-    x$setinverse(ix)
+    else
+    {
+        ix <- solve(x$get())
+        x$setinverse(ix)
+    }
     ix
 }
